@@ -1,34 +1,74 @@
 {
-  "name": "my-app",
+  "name": "web-project-mui-base-by-mochrks",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint \"{src,app}/**/*.{js,jsx,ts,tsx}\" --max-warnings=0",
+    "lint:fix": "eslint \"{src,app}/**/*.{js,jsx,ts,tsx}\" --fix",
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
-    "@mui/material": "^6.1.7",
-    "my-app": "file:",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0"
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^6.1.9",
+    "@mui/material": "^6.1.9",
+    "@mui/x-data-grid": "^7.22.2",
+    "@mui/x-date-pickers": "^7.22.2",
+    "@reduxjs/toolkit": "^2.2.7",
+    "@vercel/analytics": "1.5.0",
+    "axios": "^1.7.9",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "crypto-js": "^4.2.0",
+    "date-fns": "4.1.0",
+    "dayjs": "^1.11.13",
+    "geist": "1.5.1",
+    "js-cookie": "^3.0.5",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.544.0",
+    "moment": "^2.30.1",
+    "next": "14.2.25",
+    "notistack": "^3.0.2",
+    "prop-types": "15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.60.0",
+    "react-idle-timer": "^5.7.2",
+    "react-number-format": "^5.4.2",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "7.9.3",
+    "tailwind-merge": "3.3.1",
+    "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
-    "@eslint/js": "^9.13.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.14",
-    "globals": "^15.11.0",
-    "typescript": "~5.6.2",
-    "typescript-eslint": "^8.11.0",
-    "vite": "^5.4.10"
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.5.6",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md,css,scss,mdx}": [
+      "prettier --write"
+    ]
   }
 }
