@@ -117,19 +117,40 @@ export default function App() {
       />
 
       <Container sx={{ py: 4 }}>
-        {/* Breadcrumbs */}
-        <Box sx={{ mb: 3 }}>
-          <MpBreadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Components", href: "/components" },
-              { label: "Showcase" },
-            ]}
-          />
-        </Box>
-
-        {/* Alerts */}
         <Grid container spacing={3}>
+          {/* typography */}
+          <Grid item xs={12}>
+            <MpCard title="Typography">
+              <MpTypography variant="h1">Heading 1</MpTypography>
+              <MpTypography variant="h2">Heading 2</MpTypography>
+              <MpTypography variant="h3">Heading 3</MpTypography>
+              <MpTypography variant="h4">Heading 4</MpTypography>
+              <MpTypography variant="h5">Heading 5</MpTypography>
+              <MpTypography variant="h6">Heading 6</MpTypography>
+              <MpTypography variant="body1">Body 1</MpTypography>
+              <MpTypography variant="body2">Body 2</MpTypography>
+              <MpTypography variant="subtitle1">Subtitle 1</MpTypography>
+              <MpTypography variant="subtitle2">Subtitle 2</MpTypography>
+              <MpTypography variant="caption">Caption</MpTypography>
+              <MpTypography variant="button">Button</MpTypography>
+              <MpTypography variant="overline">Overline</MpTypography>
+            </MpCard>
+          </Grid>
+
+          {/* Breadcrumbs */}
+          <Grid item xs={12}>
+            <MpCard title="Breadcrumbs">
+              <MpBreadcrumbs
+                items={[
+                  { label: "Home", href: "/" },
+                  { label: "Components", href: "/components" },
+                  { label: "Showcase" },
+                ]}
+              />
+            </MpCard>
+          </Grid>
+
+          {/* Alerts */}
           <Grid item xs={12}>
             <MpCard title="Alerts">
               <Stack spacing={2}>
@@ -169,6 +190,35 @@ export default function App() {
                 expanded={accordionExpanded}
                 onChange={(panel) => setAccordionExpanded(panel)}
               />
+            </MpCard>
+          </Grid>
+
+          {/* Badges & Chips */}
+          <Grid item xs={12} md={12}>
+            <MpCard title="Badges & Chips">
+              <Stack spacing={2}>
+                <Stack direction="row" spacing={1} flexWrap="wrap">
+                  <MpBadge>Default</MpBadge>
+                  <MpBadge color="primary" variant="filled">
+                    Primary
+                  </MpBadge>
+                  <MpBadge color="success" variant="filled">
+                    Success
+                  </MpBadge>
+                  <MpBadge color="error" variant="filled">
+                    Error
+                  </MpBadge>
+                  <MpBadge color="warning" variant="filled">
+                    Warning
+                  </MpBadge>
+                </Stack>
+                <Stack direction="row" spacing={1} flexWrap="wrap">
+                  <MpChip label="Chip 1" />
+                  <MpChip label="Chip 2" color="primary" />
+                  <MpChip label="Deletable" onDelete={() => {}} />
+                  <MpChip label="Clickable" onClick={() => {}} />
+                </Stack>
+              </Stack>
             </MpCard>
           </Grid>
 
@@ -213,35 +263,6 @@ export default function App() {
                 <Stack direction="row" spacing={2} alignItems="center">
                   <MpCheckbox label="I agree to terms" />
                   <MpSwitch label="Enable notifications" />
-                </Stack>
-              </Stack>
-            </MpCard>
-          </Grid>
-
-          {/* Badges & Chips */}
-          <Grid item xs={12} md={6}>
-            <MpCard title="Badges & Chips">
-              <Stack spacing={2}>
-                <Stack direction="row" spacing={1} flexWrap="wrap">
-                  <MpBadge>Default</MpBadge>
-                  <MpBadge color="primary" variant="filled">
-                    Primary
-                  </MpBadge>
-                  <MpBadge color="success" variant="filled">
-                    Success
-                  </MpBadge>
-                  <MpBadge color="error" variant="filled">
-                    Error
-                  </MpBadge>
-                  <MpBadge color="warning" variant="filled">
-                    Warning
-                  </MpBadge>
-                </Stack>
-                <Stack direction="row" spacing={1} flexWrap="wrap">
-                  <MpChip label="Chip 1" />
-                  <MpChip label="Chip 2" color="primary" />
-                  <MpChip label="Deletable" onDelete={() => {}} />
-                  <MpChip label="Clickable" onClick={() => {}} />
                 </Stack>
               </Stack>
             </MpCard>
