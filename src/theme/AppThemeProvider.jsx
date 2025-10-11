@@ -1,8 +1,7 @@
 "use client";
-
 import { createContext, useContext, useMemo, useState } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
-import { createShadcnTheme } from "./createShadcnTheme";
+import { createMainTheme } from "./mainTheme";
 import PropTypes from "prop-types";
 
 const ColorModeContext = createContext({ mode: "light", toggleColorMode: () => {} });
@@ -18,7 +17,7 @@ export function AppThemeProvider({ children }) {
     [mode]
   );
 
-  const theme = useMemo(() => createShadcnTheme(mode), [mode]);
+  const theme = useMemo(() => createMainTheme(mode), [mode]);
 
   return (
     <ColorModeContext.Provider value={value}>
