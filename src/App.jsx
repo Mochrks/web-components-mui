@@ -52,22 +52,14 @@ export default function App() {
   const [sliderValue, setSliderValue] = useState(50);
   const [currentPage, setCurrentPage] = useState(1);
   const [accordionExpanded, setAccordionExpanded] = useState("panel1");
-
   const [dateValue, setDateValue] = useState(null);
-
   const [dateRangeStart, setDateRangeStart] = useState(null);
-
   const [dateRangeEnd, setDateRangeEnd] = useState(null);
-
   const [autocompleteValue, setAutocompleteValue] = useState("");
-
   const [stepperActive, setStepperActive] = useState(0);
-
   const [menuAnchor, setMenuAnchor] = useState(null);
-
   const [popoverAnchor, setPopoverAnchor] = useState(null);
   const [dropdownAnchor, setDropdownAnchor] = useState(null);
-
   const { mode, toggleColorMode } = useColorMode();
 
   const tableRows = [
@@ -426,11 +418,7 @@ export default function App() {
               />
               <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
                 <MpButton onClick={() => setDialogOpen(true)}>Open Dialog</MpButton>
-                <MpButton onClick={(e) => setMenuAnchor(e.currentTarget)} endIcon={<MoreVert />}>
-                  Menu
-                </MpButton>
                 <MpButton onClick={(e) => setPopoverAnchor(e.currentTarget)}>Popover</MpButton>
-                <MpButton onClick={(e) => setDropdownAnchor(e.currentTarget)}>Dropdown</MpButton>
                 <MpButton onClick={() => setDrawerSidebarOpen(true)}>Drawer Sidebar</MpButton>
               </Stack>
             </MpCard>
@@ -517,11 +505,15 @@ export default function App() {
                     name: "country",
                     label: "Country",
                     type: "select",
+                    placeholder: "Select a country",
                     options: [
                       { value: "us", label: "United States" },
                       { value: "uk", label: "United Kingdom" },
                       { value: "ca", label: "Canada" },
                     ],
+                    rules: {
+                      required: "Country is required",
+                    },
                   },
                   {
                     name: "agree",
@@ -539,17 +531,63 @@ export default function App() {
           </Grid>
 
           <Grid item xs={12}>
-            <MpCard title="Dropdown Menu">
-              <MpDropdownMenu
-                anchorEl={menuAnchor}
-                open={Boolean(menuAnchor)}
-                onClose={() => setMenuAnchor(null)}
-                items={[
-                  { label: "Edit", onClick: () => console.log("Edit") },
-                  { label: "Duplicate", onClick: () => console.log("Duplicate") },
-                  { label: "Delete", onClick: () => console.log("Delete") },
-                ]}
-              />
+            <MpCard title="Dropdown Components">
+              <Stack spacing={3}>
+                <Box>
+                  <Typography variant="h6" gutterBottom>
+                    MpDropdownMenu (Context Menu)
+                  </Typography>
+                  <MpButton onClick={(e) => setMenuAnchor(e.currentTarget)} endIcon={<MoreVert />}>
+                    Open Dropdown Menu with end icon
+                  </MpButton>
+                  <MpDropdownMenu
+                    anchorEl={menuAnchor}
+                    open={Boolean(menuAnchor)}
+                    onClose={() => setMenuAnchor(null)}
+                    items={[
+                      { label: "Edit", onClick: () => console.log("Edit") },
+                      { label: "Duplicate", onClick: () => console.log("Duplicate") },
+                      { label: "Delete", onClick: () => console.log("Delete") },
+                    ]}
+                  />
+                </Box>
+
+                <Box>
+                  <Typography variant="h6" gutterBottom>
+                    MpDropdown (Standalone Dropdown)
+                  </Typography>
+                  <Stack direction="row" spacing={2} flexWrap="wrap">
+                    <MpDropdown
+                      label="Basic Options"
+                      options={["Option 1", "Option 2", "Option 3"]}
+                      onSelect={(value) => console.log("Selected:", value)}
+                    />
+
+                    <MpDropdown
+                      label="With Objects"
+                      options={[
+                        { value: "edit", label: "Edit Item" },
+                        { value: "delete", label: "Delete Item" },
+                        { value: "archive", label: "Archive Item" },
+                      ]}
+                      onSelect={(value) => console.log("Selected value:", value)}
+                    />
+
+                    <MpDropdown
+                      label="User Actions"
+                      options={[
+                        { value: "profile", label: "View Profile" },
+                        { value: "settings", label: "Settings" },
+                        { value: "logout", label: "Logout" },
+                      ]}
+                      onSelect={(value) => {
+                        console.log("Action:", value);
+                        alert(`Action: ${value}`);
+                      }}
+                    />
+                  </Stack>
+                </Box>
+              </Stack>
             </MpCard>
           </Grid>
         </Grid>

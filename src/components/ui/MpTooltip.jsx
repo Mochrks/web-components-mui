@@ -1,23 +1,10 @@
 import { Tooltip } from "@mui/material";
 import PropTypes from "prop-types";
 
-export default function MpTooltip({
-  title,
-  children,
-  placement = "top",
-  arrow = true,
-  disableHoverListener = false,
-  ...props
-}) {
+export default function MpTooltip({ title, children, placement = "top", arrow = true, ...props }) {
   return (
-    <Tooltip
-      title={title}
-      placement={placement}
-      arrow={arrow}
-      disableHoverListener={disableHoverListener}
-      {...props}
-    >
-      {children}
+    <Tooltip title={title} placement={placement} arrow={arrow} {...props}>
+      <span>{children}</span>
     </Tooltip>
   );
 }
@@ -40,5 +27,4 @@ MpTooltip.propTypes = {
     "top",
   ]),
   arrow: PropTypes.bool,
-  disableHoverListener: PropTypes.bool,
 };

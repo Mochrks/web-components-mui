@@ -12,9 +12,10 @@ export default function MpForm({ fields, onSubmit, defaultValues = {}, submitLab
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid, isDirty },
   } = useForm({
     defaultValues,
+    mode: "onChange",
   });
 
   return (
@@ -36,12 +37,22 @@ export default function MpForm({ fields, onSubmit, defaultValues = {}, submitLab
                     options={field.options}
                     error={!!errors[field.name]}
                     helperText={errors[field.name]?.message}
+                    required={!!field.rules?.required}
                   />
                 );
               }
 
               if (field.type === "checkbox") {
-                return <MpCheckbox label={field.label} checked={!!value} onChange={onChange} />;
+                return (
+                  <MpCheckbox
+                    label={field.label}
+                    checked={!!value}
+                    onChange={onChange}
+                    error={!!errors[field.name]}
+                    helperText={errors[field.name]?.message}
+                    required={!!field.rules?.required}
+                  />
+                );
               }
 
               return (
@@ -53,12 +64,13 @@ export default function MpForm({ fields, onSubmit, defaultValues = {}, submitLab
                   onChange={onChange}
                   error={!!errors[field.name]}
                   helperText={errors[field.name]?.message}
+                  required={!!field.rules?.required}
                 />
               );
             }}
           />
         ))}
-        <MpButton type="submit" fullWidth>
+        <MpButton type="submit" fullWidth disabled={!isValid || !isDirty}>
           {submitLabel}
         </MpButton>
       </Stack>
