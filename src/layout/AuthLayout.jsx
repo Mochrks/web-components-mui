@@ -29,7 +29,6 @@ const AuthLayout = ({
           alignItems: "center",
         }}
       >
-        {/* Logo/Brand */}
         <Box sx={{ mb: 4, textAlign: "center" }}>
           <Typography
             variant="h3"
@@ -65,7 +64,6 @@ const AuthLayout = ({
           )}
         </Box>
 
-        {/* Auth Card */}
         <Card
           sx={{
             width: "100%",
@@ -76,13 +74,6 @@ const AuthLayout = ({
         >
           {children}
         </Card>
-
-        {/* Footer */}
-        <Box sx={{ mt: 4, textAlign: "center" }}>
-          <Typography variant="body2" sx={{ color: "white", opacity: 0.7 }}>
-            © {new Date().getFullYear()} MyApp. All rights reserved.
-          </Typography>
-        </Box>
       </Container>
     </Box>
   );

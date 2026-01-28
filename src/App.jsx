@@ -32,7 +32,6 @@ import {
   MpDateRange,
   MpStepper,
   MpSidebar,
-  MpFooter,
   MpDropdownMenu,
   MpPopover,
   MpTypography,
@@ -110,7 +109,6 @@ export default function App() {
 
       <Container sx={{ py: 4 }}>
         <Grid container spacing={3}>
-          {/* typography */}
           <Grid item xs={12}>
             <MpCard title="Typography">
               <MpTypography variant="h1">Heading 1</MpTypography>
@@ -129,7 +127,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Breadcrumbs */}
           <Grid item xs={12}>
             <MpCard title="Breadcrumbs">
               <MpBreadcrumbs
@@ -142,7 +139,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Alerts */}
           <Grid item xs={12}>
             <MpCard title="Alerts">
               <Stack spacing={2}>
@@ -185,7 +181,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Badges & Chips */}
           <Grid item xs={12} md={12}>
             <MpCard title="Badges & Chips">
               <Stack spacing={2}>
@@ -214,7 +209,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Buttons */}
           <Grid item xs={12} md={6}>
             <MpCard title="Buttons">
               <Stack spacing={2}>
@@ -236,7 +230,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Inputs & Form Controls */}
           <Grid item xs={12} md={6}>
             <MpCard title="Inputs & Form Controls">
               <Stack spacing={2}>
@@ -260,7 +253,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Avatars & Tooltips */}
           <Grid item xs={12} md={6}>
             <MpCard title="Avatars & Tooltips">
               <Stack spacing={2}>
@@ -288,7 +280,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Radio & Slider */}
           <Grid item xs={12} md={6}>
             <MpCard title="Radio Groups & Sliders">
               <Stack spacing={3}>
@@ -316,7 +307,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Date Pickers */}
           <Grid item xs={12} md={6}>
             <MpCard title="Date Pickers">
               <Stack spacing={2}>
@@ -331,7 +321,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Autocomplete */}
           <Grid item xs={12} md={6}>
             <MpCard title="Autocomplete">
               <MpAutocomplete
@@ -344,7 +333,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Field Values */}
           <Grid item xs={12} md={6}>
             <MpCard title="Field Values">
               <Stack spacing={2}>
@@ -363,7 +351,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Stepper */}
           <Grid item xs={12}>
             <MpCard title="Stepper">
               <Stack spacing={2}>
@@ -389,7 +376,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Tabs & Dialog */}
           <Grid item xs={12}>
             <MpCard title="Tabs & Dialog">
               <MpTabs
@@ -424,7 +410,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Table */}
           <Grid item xs={12}>
             <MpCard title="Data Table">
               <MpTable rows={tableRows} columns={tableColumns} pagination />
@@ -447,7 +432,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Loading & No Data States */}
           <Grid item xs={12} md={6}>
             <MpCard title="Loading State">
               <MpLoading />
@@ -460,7 +444,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Skeleton */}
           <Grid item xs={12} md={6}>
             <MpCard title="Skeleton Loaders">
               <Stack spacing={1}>
@@ -475,7 +458,6 @@ export default function App() {
             </MpCard>
           </Grid>
 
-          {/* Form Example */}
           <Grid item xs={12} md={6}>
             <MpCard title="Form (react-hook-form)">
               <MpForm
@@ -593,17 +575,6 @@ export default function App() {
         </Grid>
       </Container>
 
-      {/* Footer */}
-      <MpFooter
-        copyright="© 2025 Web Components MUI by @mochrks"
-        links={[
-          { label: "Privacy", href: "/privacy" },
-          { label: "Terms", href: "/terms" },
-          { label: "Contact", href: "/contact" },
-        ]}
-      />
-
-      {/* Dialog */}
       <MpDialog
         open={dialogOpen}
         onClose={() => setDialogOpen(false)}
@@ -623,7 +594,6 @@ export default function App() {
         </Typography>
       </MpDialog>
 
-      {/* Sidebar */}
       <MpSidebar
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
@@ -686,7 +656,6 @@ export default function App() {
         ]}
       />
 
-      {/* Popover */}
       <MpPopover
         open={Boolean(popoverAnchor)}
         anchorEl={popoverAnchor}

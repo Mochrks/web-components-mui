@@ -15,7 +15,7 @@ export { default as MpDrawerSidebar } from "./ui/MpDrawerSidebar.jsx";
 export { default as MpDropdown } from "./ui/MpDropdown.jsx";
 export { default as MpDropdownMenu } from "./ui/MpDropdownMenu.jsx";
 export { default as MpFieldValue } from "./ui/MpFieldValue.jsx";
-export { default as MpFooter } from "./ui/MpFooter.jsx";
+
 export { default as MpInput } from "./ui/MpInput.jsx";
 export { default as MpLoading } from "./ui/MpLoading.jsx";
 export { default as MpNavbar } from "./ui/MpNavbar.jsx";

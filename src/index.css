@@ -1,7 +1,6 @@
-/* Base reset and shadcn-like surface look via CSS variables used by MUI overrides */
 :root {
   --radius: 8px;
-  --ring: 0 0% 9%; /* approximate for focus ring in light */
+  --ring: 0 0% 9%;
 }
 
 *,

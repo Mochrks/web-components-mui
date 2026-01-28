@@ -3,17 +3,16 @@ import { useState } from "react";
 import LayoutHeader from "./components/LayoutHeader";
 import LayoutSidebar from "./components/LayoutSidebar";
 import LayoutContent from "./components/LayoutContent";
-import LayoutFooter from "./components/LayoutFooter";
+
 import PropTypes from "prop-types";
 const MainLayout = ({
   children,
   headerProps = {},
   sidebarProps = {},
   contentProps = {},
-  footerProps = {},
+
   showHeader = true,
   showSidebar = true,
-  showFooter = true,
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -37,7 +36,6 @@ const MainLayout = ({
 
   return (
     <Box sx={{ display: "flex", minHeight: "100vh", flexDirection: "column" }}>
-      {/* Header */}
       {showHeader && (
         <LayoutHeader
           title="My Application"
@@ -63,9 +61,7 @@ const MainLayout = ({
         />
       )}
 
-      {/* Main Content Area */}
       <Box sx={{ display: "flex", flex: 1, pt: showHeader ? "64px" : 0 }}>
-        {/* Sidebar */}
         {showSidebar && (
           <LayoutSidebar
             open={sidebarOpen}
@@ -75,7 +71,6 @@ const MainLayout = ({
           />
         )}
 
-        {/* Content */}
         <LayoutContent
           sx={{
             ml: showSidebar && sidebarOpen && !isMobile ? `${sidebarProps.width || 240}px` : 0,
@@ -89,9 +84,6 @@ const MainLayout = ({
           {children}
         </LayoutContent>
       </Box>
-
-      {/* Footer */}
-      {showFooter && <LayoutFooter {...footerProps} />}
     </Box>
   );
 };
@@ -101,9 +93,8 @@ MainLayout.propTypes = {
   headerProps: PropTypes.object,
   sidebarProps: PropTypes.object,
   contentProps: PropTypes.object,
-  footerProps: PropTypes.object,
+
   showHeader: PropTypes.bool,
   showSidebar: PropTypes.bool,
-  showFooter: PropTypes.bool,
 };
 export default MainLayout;

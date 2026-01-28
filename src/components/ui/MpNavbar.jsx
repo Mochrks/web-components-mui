@@ -49,7 +49,6 @@ export default function MpNavbar({
               </Button>
             ))}
 
-            {/* Dark Mode Toggle Button */}
             {onToggleColorMode && (
               <IconButton
                 onClick={onToggleColorMode}
@@ -63,7 +62,6 @@ export default function MpNavbar({
           </Box>
         )}
 
-        {/* Dark Mode Toggle Button jika tidak ada actions */}
         {!actions && onToggleColorMode && (
           <IconButton onClick={onToggleColorMode} color="inherit" aria-label="toggle theme">
             {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}

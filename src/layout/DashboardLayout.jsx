@@ -24,7 +24,6 @@ const DashboardLayout = ({
       }}
       {...layoutProps}
     >
-      {/* Page Header */}
       <Box sx={{ mb: 4 }}>
         <Box
           sx={{
@@ -56,7 +55,6 @@ const DashboardLayout = ({
         </Box>
       </Box>
 
-      {/* Page Content */}
       {children}
     </MainLayout>
   );

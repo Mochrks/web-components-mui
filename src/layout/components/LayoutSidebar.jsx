@@ -108,7 +108,6 @@ const LayoutSidebar = ({ open, onClose, width = 240, items = [], variant = "pers
                 handleSubmenuToggle(item.id);
               } else {
                 onClose?.();
-                // Handle navigation here
                 console.log("Navigate to:", item.href);
               }
             }}
@@ -215,7 +214,6 @@ const LayoutSidebar = ({ open, onClose, width = 240, items = [], variant = "pers
 
       <List sx={{ flexGrow: 1, py: 1 }}>{menuItems.map((item) => renderMenuItem(item))}</List>
 
-      {/* Sidebar Footer */}
       <Box
         sx={{
           p: 2,

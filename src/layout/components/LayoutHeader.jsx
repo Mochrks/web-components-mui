@@ -48,12 +48,10 @@ const LayoutHeader = ({
         </Typography>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          {/* Color Mode Toggle */}
           <Button variant="text" onClick={onToggleColorMode} sx={{ minWidth: "auto", px: 1 }}>
             {mode === "dark" ? "🌙" : "☀️"}
           </Button>
 
-          {/* Notifications */}
           <Dropdown
             trigger={
               <IconButton color="inherit">
@@ -81,7 +79,6 @@ const LayoutHeader = ({
             sx={{ width: 320 }}
           />
 
-          {/* User Menu */}
           <Dropdown
             trigger={
               <IconButton color="inherit">
@@ -104,7 +101,6 @@ const LayoutHeader = ({
             ]}
             onSelect={(value) => {
               if (value === "logout") {
-                // Handle logout
                 console.log("Logout clicked");
               }
             }}
