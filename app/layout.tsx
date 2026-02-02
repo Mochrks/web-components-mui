@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
+import SmoothScrolling from "@/src/components/SmoothScrolling";
 
 export const metadata: Metadata = {
   title: "Web Component MUI Base",
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="antialiased">
-        {children}
-        <Analytics />
+        <SmoothScrolling>
+          {children}
+          <Analytics />
+        </SmoothScrolling>
       </body>
     </html>
   );
