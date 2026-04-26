@@ -28,6 +28,17 @@ import NoDataShowcase from "./showcase/NoDataShowcase";
 import SkeletonShowcase from "./showcase/SkeletonShowcase";
 import FormShowcase from "./showcase/FormShowcase";
 import DropdownShowcase from "./showcase/DropdownShowcase";
+import ToastShowcase from "./showcase/ToastShowcase";
+import CardsShowcase from "./showcase/CardsShowcase";
+import CarouselShowcase from "./showcase/CarouselShowcase";
+import ChartsShowcase from "./showcase/ChartsShowcase";
+import NavMenuShowcase from "./showcase/NavMenuShowcase";
+import SheetDrawerShowcase from "./showcase/SheetDrawerShowcase";
+import TooltipHoverShowcase from "./showcase/TooltipHoverShowcase";
+import OTPInputShowcase from "./showcase/OTPInputShowcase";
+import ToggleSwitchShowcase from "./showcase/ToggleSwitchShowcase";
+
+import { Box, Typography, Divider, Chip, Stack } from "@mui/material";
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -73,12 +84,21 @@ export default function App() {
           <StepperShowcase />
           <TabsDialogShowcase />
           <TableShowcase />
-          <PaginationShowcase />
           <LoadingShowcase />
           <NoDataShowcase />
           <SkeletonShowcase />
           <FormShowcase />
           <DropdownShowcase />
+          <ToastShowcase />
+          <CardsShowcase />
+          <NavMenuShowcase />
+          <CarouselShowcase />
+          <ChartsShowcase />
+          <PaginationShowcase />
+          <SheetDrawerShowcase />
+          <TooltipHoverShowcase />
+          <OTPInputShowcase />
+          <ToggleSwitchShowcase />
         </Grid>
       </Container>
 

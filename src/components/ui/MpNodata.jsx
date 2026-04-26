@@ -12,7 +12,17 @@ export default function MpNodata({ message = "No data available", icon }) {
       minHeight="200px"
       gap={2}
     >
-      {icon || <Inbox sx={{ fontSize: 48, color: "text.secondary", opacity: 0.5 }} />}
+      {icon || (
+        <Box
+          component="img"
+          src="/no-data.png"
+          alt="No data illustration"
+          sx={{ width: 120, height: "auto", opacity: 0.8 }}
+          onError={(e) => {
+            e.target.src = "https://cdn-icons-png.flaticon.com/512/7486/7486744.png";
+          }}
+        />
+      )}
       <Typography variant="body1" color="text.secondary">
         {message}
       </Typography>
