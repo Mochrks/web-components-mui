@@ -15,7 +15,7 @@ export default function MpNodata({ message = "No data available", icon }) {
       {icon || (
         <Box
           component="img"
-          src="/no-data.png"
+          src="/nodata.png"
           alt="No data illustration"
           sx={{ width: 120, height: "auto", opacity: 0.8 }}
           onError={(e) => {

@@ -33,7 +33,7 @@ export default function CardsShowcase() {
               <CardMedia
                 component="img"
                 height="240"
-                image="/blog-post.png"
+                image="/product-watch.png"
                 alt="Blog"
                 sx={{
                   backgroundColor: "#f5f5f5",
